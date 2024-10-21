@@ -77,6 +77,8 @@ int main() {
 }
 ```
 OUTPUT:
+
+
 ![Screenshot 2024-10-21 105347](https://github.com/user-attachments/assets/3ee1048b-5367-4511-9cc6-387d632fc263)
 
 

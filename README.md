@@ -1,25 +1,26 @@
-# EX-8-ADVANCED-ENCRYPTION-STANDARD-DES-ALGORITHM
+EX.7 Implement DES Encryption and Decryption
 
-## Aim:
-  To use Advanced Encryption Standard (AES) Algorithm for a practical application like URL Encryption.
+AIM:
+Implementation of Pseudorandom Number Generation Using Standard library.
 
-## ALGORITHM: 
-  1. AES is based on a design principle known as a substitution–permutation. 
-  2. AES does not use a Feistel network like DES, it uses variant of Rijndael. 
-  3. It has a fixed block size of 128 bits, and a key size of 128, 192, or 256 bits. 
-  4. AES operates on a 4 × 4 column-major order array of bytes, termed the state
+ALGORITHM:
+1.	Get the input and convert it as block cipher.
+2.	The plain text is initially permuted and split into 2 equal halves.
+3.	It undergoes 16 rounds of encryption.
+4.	These 2 halves are finally rejoined to give cipher text.
+5.	The same happens in decryption process but in an inverse manner.
 
-## PROGRAM: 
-```
+PROGRAM:
+```c
 #include <stdio.h>
 #include <string.h>
 
-// Function to perform a simple XOR-based encryption (AES-like)
+// Function to perform a simple XOR-based encryption
 void encrypt(char *message, char *key, char *encryptedMessage, int messageLength) {
     int keyLength = strlen(key);
 
     for (int i = 0; i < messageLength; i++) {
-        // Encrypt by XORing message byte with key byte (simplified)
+        // Encrypt by XORing message byte with key byte
         encryptedMessage[i] = message[i] ^ key[i % keyLength];
     }
     encryptedMessage[messageLength] = '\0';  // Null-terminate the encrypted message
@@ -30,7 +31,7 @@ void decrypt(char *encryptedMessage, char *key, char *decryptedMessage, int mess
     int keyLength = strlen(key);
 
     for (int i = 0; i < messageLength; i++) {
-        // Decrypt by XORing encrypted byte with key byte (simplified)
+        // Decrypt by XORing encrypted byte with key byte
         decryptedMessage[i] = encryptedMessage[i] ^ key[i % keyLength];
     }
     decryptedMessage[messageLength] = '\0';  // Null-terminate the decrypted message
@@ -39,8 +40,8 @@ void decrypt(char *encryptedMessage, char *key, char *decryptedMessage, int mess
 int main() {
     char message[100];
     char key[100];
-    printf("\n                *****Simualtion of AES Encryption and Decryption*****\n\n");
     
+    printf("\n      *****Simulation of DES encryption and decryption*****\n\n");
     // Get user input for the message
     printf("Enter the message to encrypt: ");
     fgets(message, sizeof(message), stdin);
@@ -75,8 +76,9 @@ int main() {
     return 0;
 }
 ```
-## OUTPUT:
-![Screenshot 2024-10-21 104657](https://github.com/user-attachments/assets/a0b3dc19-6edf-4bd4-be53-0180ec8b5bcb)
+OUTPUT:
+![Screenshot 2024-10-21 105347](https://github.com/user-attachments/assets/3ee1048b-5367-4511-9cc6-387d632fc263)
 
-## RESULT: 
-Hence, the simulation of AES encryption and decryption is successfully done.
+
+RESULT:
+	Hence, for the given input text and key the DES algorithm is successfully simulated.

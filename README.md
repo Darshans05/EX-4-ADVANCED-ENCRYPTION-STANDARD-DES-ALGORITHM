@@ -1,6 +1,6 @@
 # EX.7 Implement DES Encryption and Decryption
 # AIM:
-Implementation of Pseudorandom Number Generation Using Standard library.
+Implement DES Encryption and Decryption
 
 # ALGORITHM:
 1.	Get the input and convert it as block cipher.
